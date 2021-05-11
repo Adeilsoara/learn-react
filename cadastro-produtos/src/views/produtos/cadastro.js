@@ -8,7 +8,8 @@ const estadoInicial = {
     descricao: '',
     preco: 0,
     fornecedor: '',
-    sucesso: false
+    sucesso: false,
+    errors: []
 }
 
 class CadastroProduto extends React.Component {
@@ -34,9 +35,15 @@ class CadastroProduto extends React.Component {
             preco: this.state.preco,
             fornecedor: this.state.fornecedor
         }
-        this.service.salvar(produto)
-        this.limpaCampo()
-        this.setState({sucesso: true})
+        try {
+            this.service.salvar(produto)
+            this.limpaCampo()
+            this.setState({sucesso: true})
+        } catch (erro) {
+            const errors = erro.errors
+            this.setState({errors: errors})
+        }
+        
     }
 
     limpaCampo = () => {
@@ -55,19 +62,28 @@ class CadastroProduto extends React.Component {
                 <div className='card-header'>
                     Cadastro de Produto
                 </div>
-                   
-                   
-                    <div className='card-body'>
+                <div className='card-body'>
                 { this.state.sucesso &&
     
-                    <div className="alert alert-dismissible alert-success">
-                        <button type="button" className="btn-close" data-bs-dismiss="alert"></button>
+                    <div class="alert alert-dismissible alert-success">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                         <strong>Muito Bom!</strong> Cadastro realizado com sucesso!
                     </div>
-   
 
                 }
-                
+
+                { this.state.errors.length > 0 &&
+                    
+                    this.state.errors.map( msg => {
+                        return (
+                            <div class="alert alert-dismissible alert-danger">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                <strong>Error</strong> {msg}
+                            </div>
+                        )
+                    })
+                   
+                }
 
                     <div className='row'>
                         <div className='col-md-6'>
