@@ -55,7 +55,9 @@ class CadastroProduto extends React.Component {
                 <div className='card-header'>
                     Cadastro de Produto
                 </div>
-                <div className='card-body'>
+                   
+                   
+                    <div className='card-body'>
                 { this.state.sucesso &&
     
                     <div className="alert alert-dismissible alert-success">
@@ -63,6 +65,7 @@ class CadastroProduto extends React.Component {
                         <strong>Muito Bom!</strong> Cadastro realizado com sucesso!
                     </div>
    
+
                 }
                 
 
