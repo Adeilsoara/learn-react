@@ -11,7 +11,8 @@ const estadoInicial = {
     preco: 0,
     fornecedor: '',
     sucesso: false,
-    errors: []
+    errors: [],
+    atualizando : false
 }
 
 class CadastroProduto extends React.Component {
@@ -43,7 +44,7 @@ class CadastroProduto extends React.Component {
             this.setState({sucesso: true})
         } catch (erro) {
             const errors = erro.errors
-            this.setState({errors: errors})
+            this.setState({errors : errors})
         }
         
     }
@@ -55,11 +56,10 @@ class CadastroProduto extends React.Component {
     componentDidMount(){
        const cod = this.props.match.params.cod
        if(cod){
-        const resultado = this.
-        service.obterProdutos().filter(produto => produto.cod === cod)
+        const resultado = this.service.obterProdutos().filter(produto => produto.cod === cod)
         if (resultado.length === 1) {
             const produtoEncontrado = resultado[0]
-            this.setState({...produtoEncontrado})
+            this.setState({ ...produtoEncontrado, atualizando: true })
         }
        }
     }
@@ -68,12 +68,13 @@ class CadastroProduto extends React.Component {
         return(
             <div className='card'>
                 <div className='card-header'>
-                    Cadastro de Produto
+                    {this.state.atualizando ? 'Atualização ' :'Cadastro '}
+                     de Produto
                 </div>
                 <div className='card-body'>
                 { this.state.sucesso &&
     
-                    <div class="alert alert-dismissible alert-success">
+                     <div class="alert alert-dismissible alert-success">
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                         <strong>Muito Bom!</strong> Cadastro realizado com sucesso!
                     </div>
@@ -110,6 +111,7 @@ class CadastroProduto extends React.Component {
                                 <label>Cod: </label>
                                 <input type='text' 
                                        name='cod' 
+                                       disabled={this.state.atualizando}
                                        value={this.state.cod} 
                                        onChange={this.onChange}
                                        className='form-control'/>
@@ -159,7 +161,9 @@ class CadastroProduto extends React.Component {
 
                     <div className='row'>
                         <div className='col-md-1'>
-                            <button onClick={this.onSubmit} className='btn btn-success'> Salvar </button>
+                            <button onClick={this.onSubmit} className='btn btn-success'> 
+                            {this.state.atualizando ? 'Atualizar ' : 'Salvar'}
+                            </button>
                         </div>
                         <div className='col-md-1'>
                             <button onClick={this.limpaCampo} className='btn btn-primary'> Limpar </button>

@@ -22,6 +22,11 @@ import {withRouter} from 'react-router-dom'
         this.props.history.push(`/cadastro-produtos/${cod}`)
     }
 
+    deletar = (cod) => {
+      const produtos =  this.service.deletar(cod)
+      this.setState({produtos})
+    }
+
     render(){
         return(
             <div className='card'>
@@ -49,7 +54,7 @@ import {withRouter} from 'react-router-dom'
                                         <th>{produto.fornecedor}</th>
                                         <th>
                                             <button onClick={() => this.preparaEditar(produto.cod)} className="btn btn-primary">Editar</button>
-                                            <button className="btn btn-danger">Deletar</button>
+                                            <button onClick={() => this.deletar(produto.cod)} className="btn btn-danger">Deletar</button>
                                         </th>
                                     </tr>
                                 )
