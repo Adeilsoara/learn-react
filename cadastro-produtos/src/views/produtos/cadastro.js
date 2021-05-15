@@ -4,6 +4,8 @@ import ProdutoService from '../../app/produtoService'
 
 import {withRouter} from 'react-router-dom'
 
+import Card from '../../components/card'
+
 const estadoInicial = {
     nome: '',
     cod: '',

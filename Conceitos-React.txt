@@ -1,0 +1,26 @@
+/public - index.html: sempre que uma página é iniciada
+ela é iniciada nesse arquivo, é um arquivo html simples, 
+onde a parte mais importante é a <div id="root">, nesse
+arquivo é onde todos os nossos Componentes são carregados.
+
+/src - index.js - saindo do index o React irá carregar
+esse arquivo, onde será renderizado o <App> (que é um
+componente) dentro daquela <div id="root">.
+
+/src - App.js - o elemento render() irá carregar os elementos
+que a gente quer que apareça na tela, o que a gente vê
+nessa parte que é bem parecida com HTML na verdade é o 
+que chamamos de JSX, a maior diferença que temos é que 
+ao invés de definirmos 'class' para nossas classes iremos
+utilizar 'className', pois o 'class' no React é uma palavra
+reservada e apenas para não haver confunsão optou-se por
+utilizar essa notação.
+
+package.json - 
+
+component -
+state - 
+bind - 
+literals js -
+fetch - 
+
