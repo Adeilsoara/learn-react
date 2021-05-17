@@ -16,11 +16,45 @@ utilizar 'className', pois o 'class' no React é uma palavra
 reservada e apenas para não haver confunsão optou-se por
 utilizar essa notação.
 
-package.json - 
 
-component -
-state - 
-bind - 
-literals js -
+JSX - O que parece ser um HTML dentro do método render, é na verdade JSX, um sintatic sugar para a API do React.
+As principais diferenças no dia a dia entre HTML e JSX são:
+- O class do html passa a se chamar className, porque o termo class é uma palavra reservada no Javascript;
+- O conteúdo que estiver entre chaves {}, será interpretado como Javascript;
+<script> </script> -->> {}
+
+
+
+component - Components nada mais do que blocos/partes da sua aplicação, como se fossem peças do conjunto total
+do seu App, cada Components é um pedaço do todo e você pode desenvolver cada um desses "pedaços" e no fim ir
+aclopando, muito bom para manutenção  e reaproveitamento de código;
+
+props - As prop são atributos, por exemplo em um "<button type="button"/>" o typy será uma props da target/tag
+button;
+
+state - O state tem por objetivo guardar os estados de sua aplicação, por estado entende-se que é algo que 
+está ou não ativado, true ou false, valore inicias de um campo, sempre captando aquele valor para fazer
+alguma modificação;
+
+Arrow Functions - forma mais simples de escrever uma função
+Antigamente : function() {}
+Arrow Functions : () => {}
+
+bind - toda função javascript possui esse método que tem, de modo geral, função de resgatar
+um valor que vai sendo modificado ao longo da aplicação
+
+
+Literals js - É uma forma mais simples de escrever sentenças em JavaScript, exemplo:
+Sem literals: const mensagem = "O valor do desconto é: " + (preco - (preco * desconto))
+Com literals: const mensagem = `O valor do desconto é: ${(preco - (preco * desconto))}`
+
+
+API - Application Programming Interface, Interface de Programação de Aplicativos
+quando você desenvolve algum software que pode ser usado por outros softwares
+e deseja disponibilizá-lo para todos você cria uma API, por exemplo, a API de 
+GPS que é utilizada por muitas outras aplicações
+
+
+
 fetch - 
-
+package.json - 
