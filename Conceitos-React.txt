@@ -40,13 +40,23 @@ Arrow Functions - forma mais simples de escrever uma função
 Antigamente : function() {}
 Arrow Functions : () => {}
 
+Link para conceito de Arrow functions:
+https://hcode.com.br/blog/entendendo-arrow-functions-de-uma-vez-por-todas
+
 bind - toda função javascript possui esse método que tem, de modo geral, função de resgatar
 um valor que vai sendo modificado ao longo da aplicação
+
+Link para o conceito de Bind:
+https://tableless.com.br/explorando-metodo-bind-em-javascript/
 
 
 Literals js - É uma forma mais simples de escrever sentenças em JavaScript, exemplo:
 Sem literals: const mensagem = "O valor do desconto é: " + (preco - (preco * desconto))
 Com literals: const mensagem = `O valor do desconto é: ${(preco - (preco * desconto))}`
+
+Link para mais detalhes do conceito de Literals:
+
+https://www.devmedia.com.br/javascript-template-literals/41193
 
 
 API - Application Programming Interface, Interface de Programação de Aplicativos
@@ -54,7 +64,14 @@ quando você desenvolve algum software que pode ser usado por outros softwares
 e deseja disponibilizá-lo para todos você cria uma API, por exemplo, a API de 
 GPS que é utilizada por muitas outras aplicações
 
+Link para entender o que é uma API:
+https://canaltech.com.br/software/o-que-e-api/
+
+Link para a API de Conversão usada na aula:
+https://free.currconv.com/api/v7/convert?apiKey=do-not-use-this-key&q=USD_BRL&compact=y
 
 
-fetch - 
-package.json - 
+
+fetch - link para entender melhor a API fetch: 
+https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch
+
