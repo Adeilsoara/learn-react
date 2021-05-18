@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 function App() {
   //programação funcional com hooks no React
@@ -11,10 +11,6 @@ function App() {
     const numero2 = parseInt(segundoNumero)
     setResultado ( numero1 + numero2)
   }
-
-  useEffect(() => {
-    console.log("variável número: ", numero)
-  }, [numero])
   //Outra forma de usar o hooks
  /*  const [state, setState] = useState({
     numero: 0,
